@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+ char decision = 'y';
+ while (decision = 'y') {
+  int homeScore; int awayScore;
+
+  cout << "enter home score: ";
+  cin >> homeScore;
+  cout << "enter away score: ";
+  cin >> awayScore;
+
+  cout << "home score: " << homeScore << endl;
+  cout << "away score: " << awayScore << endl;
+
+  if (homeScore > awayScore)
+   cout << "home won!" << endl;
+  else if (awayScore > homeScore)
+   cout << "away won!" << endl;
+  else
+   cout << "no winner." << endl;
+
+  cout << "go again? ('y' for yes, any other key for no.): ";
+  cin >> decision;
+  if (decision != 'y') {
+   break;
+  }
+ }
+}
