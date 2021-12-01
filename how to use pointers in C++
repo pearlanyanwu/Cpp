@@ -1,0 +1,115 @@
+// Assignment 7: Pearl Anyanwu
+// This program demonstrates practice with pointers by following a set of tasks.
+
+#include <iostream>
+using namespace std;
+
+// 11. write a function called 'void noNegatives(int *x)'.
+// the function should accept the address of an int variable.
+// condition: if the value of this integer is negative, then the value should be set to zero.
+void noNegatives(int *x)
+{
+ if (*x < 0) {
+  *x = 0;
+ }
+}
+
+// 21. write a function called 'swap()' that accepts two int pointers as arguments,
+// and then swaps the two ints that the pointers point to.
+void swap(int *p1, int *p2)
+{
+ int temp;
+ temp = *p1;
+ *p1 = *p2;
+ *p2 = temp;
+}
+
+int main()
+{
+// 1. create two int variables named 'x' and 'y'.
+ int x; int y;
+
+// 2. create an int pointer named 'p1'.
+ int *p1;
+
+// 3. store the address of x in p1.
+ p1 = &x;
+
+// 4. use p1 to set the value of x to 99.
+ *p1 = 99;
+
+// 5. using cout and x, display the value of x.
+ cout << "x: " << x << endl;
+
+// 6. using cout and p1, display the value of x.
+ cout << "x: " << *p1 << endl;
+ cout << endl;
+
+// 7. store the address of y into p1.
+ p1 = &y;
+
+// 8. use p1 to set the value of y to -300.
+ *p1 = -300;
+
+// 9. create two new variables: an int named 'temp' and an int pointer named 'p2'.
+ int temp; int *p2;
+
+// 10. use temp, p1, p2 to swap the values of x and y.
+ p1 = &x;
+ p2 = &y;
+ temp = *p1;
+ *p1 = *p2;
+ *p2 = temp;
+
+// 12. call noNegatives() for the addresses of x and y.
+ noNegatives(p1);
+ noNegatives(p2);
+
+// 13. use p2 to display the values of x and y.
+ *p2 = 0;
+ cout << "x: " << *p2 << endl;
+ *p2 = 99;
+ cout << "y: " << *p2 << endl;
+ cout << endl;
+ 
+// 14. create an integer array with two elements. the array should be named 'a'.
+ int a[2];
+
+// 15. use p2 to initialize the first element of array 'a' with the value of x.
+ *p2 = 0;
+ a[0] = *p2;
+
+// 16. use p2 to initialize the second element of array 'a' with the value of y.
+ *p2 = 99;
+ a[1] = *p2;
+
+// 17. using cout, display the address of the first element, a[0], in array 'a'.
+ cout << &a[0] << endl;
+
+// 18. using cout, display the address of the second element, a[1], in array 'a'.
+ cout << &a[1] << endl;
+ cout << endl;
+ 
+// 19. use p1, p2, temp to swap the values of the two elements in the array 'a'.
+ *p1 = 0;
+ *p2 = 99;
+ temp = *p1;
+ *p1 = *p2;
+ *p2 = temp;
+
+// 20. display the values of the two elements. (99,0).
+ cout << "x: " << *p1 << endl;
+ cout << "y: " << *p2 << endl;
+ cout << endl;
+ 
+// 22. call swap() with the addresses of x and y, then print their values. (99,0).
+ swap(p1, p2);
+ cout << "x: " << *p2 << endl;
+ cout << "y: " << *p1 << endl;
+ cout << endl;
+
+// 23. call swap() with the addresses of x and y, then print their values. (0,99)
+ swap(p1, p2);
+ cout << "x: " << *p2 << endl;
+ cout << "y: " << *p1 << endl;
+}
