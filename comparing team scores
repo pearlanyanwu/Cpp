@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+ int homeScore;
+ int visitorScore;
+ const int lowScore = 3;
+
+ cout << "enter the score of the home team: ";
+ cin >> homeScore;
+ cout << "enter the score of the visitor team: ";
+ cin >> visitorScore;
+
+ cout << "home score: " << homeScore << endl;
+ cout << "visitor score: " << visitorScore << endl;
+
+ if (homeScore > visitorScore)
+  cout << "home team won!" << endl;
+ else if (visitorScore > homeScore)
+  cout << "visitor team won!" << endl;
+ else
+  cout << "tie game." << endl;
+
+ if (homeScore < lowScore) {
+  cout << "home team scored less than " << lowScore << "." <<  endl;
+ }
+  if (visitorScore < lowScore) {
+   cout << "visitor team scored less than " << lowScore << "." << endl;
+  }
+}
