@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+ int numInnings;
+ int numRuns;
+
+ cout << "number of innings: ";
+ cin >> numInnings;
+ cout << "number of runs: ";
+ cin >> numRuns;
+
+ float era = (numRuns*9.0)/(numInnings);
+
+ cout << "pitcher's earned run average is " << era << "." << endl;
+}
