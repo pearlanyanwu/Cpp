@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+   
+int main()
+{
+    char name[100] = "CS110B";
+    name[2] = '\0';
+    cout << name << endl;
+}
+
+// Question: What will this print out?
+// Answer: 'CS'
