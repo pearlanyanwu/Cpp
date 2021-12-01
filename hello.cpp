@@ -2,7 +2,9 @@
 // This program prints out as many asterisks as the user wants.
 
 #include <iostream>
-using namespace std; int main()
+using namespace std;
+
+int main()
 {
     int count; // declares the variable count to be an integer.
     char goAgain = 'y'; // declares the variable goAgain to be a character. 'y'=(yes)
