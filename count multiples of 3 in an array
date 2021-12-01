@@ -1,0 +1,23 @@
+// this program takes an array and counts the number of elements that are multiples of 3
+
+#include <iostream>
+using namespace std;
+
+int countMult(int array[], int size)
+{
+ int count = 0;
+ 
+ for (int i = 0; i < size; i++) {
+  if (array[i] % 3 == 0) {
+   count++;
+  }
+ }
+ cout << count << endl;
+ return count;
+}
+
+int main()
+{
+ int array[5] = {9, 1, 24, 86, 30};
+ countMult(array, 5);
+}
