@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string burritoTypes[4] = {"carnitas", "beef", "shrimp", "veggie"};
+    int burritoSales[4] = {0};
+    int total = 0;
+    int burritoNum = 0;
+    int burritoMost = 0;
+
+    for (int i = 0; i < 4; i++) {
+        cout << "enter the number of " << burritoTypes[i] << " sold: ";
+        cin >> burritoSales[i];
+        total = total + burritoSales[i];
+    }
+    cout << "you sold " << total << " burritos today." << endl;
+    for (int j = 0; j < 4; j++) {
+        if (burritoNum < burritoSales[j]) {
+            burritoNum = burritoSales[j];
+            burritoMost = j;
+        } 
+    }
+    cout << "the most burritos sold was " << burritoTypes[burritoMost] << "." << endl;
+}
