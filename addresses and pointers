@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+// Write a statement which will assign the address of i to iPtr.
+
+int main()
+{
+    int i = 3;
+    int *iPtr = NULL;
+    iPtr = &i;
+    cout << iPtr;
+}
