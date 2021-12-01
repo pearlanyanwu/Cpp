@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+struct SalesRecord
+{
+    string burritoNames;
+    int numSold;
+};
+
+int main()
+{
+    SalesRecord *sales = NULL;
+    int numTypes;
+    
+    cout << "How many types of burritos?: ";
+    cin >> numTypes;
+    
+    sales = new SalesRecord[numTypes];
+    
+    int burritoSales[numTypes] = {0};
+    int total = 0;
+    int burritoNum = 0;
+    int burritoMost = 0;
+
+    for (int i = 0; i < numTypes; i++) {
+        cout << "Burrito type " << i+1 << ": ";
+        cin >> sales[i].burritoNames;
+        cout << "Number of " << sales[i].burritoNames << " burritos sold: ";
+        cin >> sales[i].numSold;
+        total = total + sales[i].numSold;
+    }
+    cout << endl;
+    cout << "Daily Report:" << endl;
+    for (int j = 0; j < numTypes; j++) {
+        cout << sales[j].burritoNames << ": " << sales[j].numSold << endl;
+    }
+    cout << endl;
+    cout << "Total burritos sold: " << total << endl;
+    
+    delete [] sales;
+    sales = NULL;
+}
