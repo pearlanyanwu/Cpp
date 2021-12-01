@@ -1,0 +1,34 @@
+// this program takes in a txt file containing 3 numbers, calculates the average,
+// then displays the average value on the screen.
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+double cardsAverage()
+{
+ fstream inputFile;
+ inputFile.open("cards.txt");
+ int length = 3;
+ int cards[length];
+ for (int i=0; i<length; i++) {
+    inputFile >> cards[i];
+ }
+ inputFile.close();
+ for (int j=0; j<length; j++) {
+    cout << "card #" << j+1 << ": " << cards[j] << endl;
+ }
+  float average = cards[0]+cards[1]+cards[2] / (length);
+  cout << "the average of the " << length << " cards is " << average << "." << endl;
+}
+
+int main()
+{
+ cardsAverage();
+}
+
+
+// cards.txt
+128904
+212323
+250202
