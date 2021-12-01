@@ -1,0 +1,69 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+bool linearSearch(const int list[], int size, int value)
+{
+ int pos = 0;
+ bool isFound = false;
+
+ while (!isFound && pos < size) {
+  if (list[pos] == value)
+   isFound = true;
+  pos++;
+ }
+ return isFound;
+}
+
+int main()
+{
+ ifstream inputFile;
+ inputFile.open("cards.txt");
+ int length = 20;
+ int list[length];
+
+ for (int i=0; i<length; i++) {
+  inputFile >> list[i];
+ }
+  for (int j=0; j<length; j++) {
+   cout << list[j] << endl;
+  }
+
+ inputFile.close();
+
+ int num;
+ cout << "enter card number: ";
+ cin >> num;
+
+ if (linearSearch(list, length, num)) {
+  cout << "stolen card! >:o" << endl;
+ }
+ else {
+  cout << "not a stolen card :)" << endl;
+ }
+}
+
+
+
+
+// cards.txt
+128904
+212323
+250202
+279711
+323435
+352347
+390121
+399191
+424090
+425011
+439023
+444444
+489201
+598264
+623109
+799090
+811424
+902123
+920943
+955010
