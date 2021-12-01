@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// DMA == "Dynamic Memory Allocation".
+
+void initializeArrays(string names[], int wins[], int size)
+{
+ for (int i=0; i<size; i++) {
+  cout << "name of team #" << i+1 << ": ";
+  cin >> names[i];
+  cout << "score of team #" << i+1 << ": ";
+  cin >> wins[i];
+ }
+}
+
+void swapper(int& x, int& y)
+{
+ int temp;
+ temp = x;
+ x = y;
+ y = temp;
+}
+
+void swapper(string& x, string& y)
+{
+ string temp;
+ temp = x;
+ x = y;
+ y = temp;
+}
+
+void sortData(string names[], int wins[], int size)
+{
+ for (int i=0; i<size; i++) {
+  for (int j=i+1; j<size; j++) {
+   if (wins[j] > wins[i]) {
+    swapper(wins[j], wins[i]);
+    swapper(names[j], names[i]);
+   }
+  }
+ }
+}
+
+void displayData(string names[], int wins[], int size)
+{
+ cout << endl;
+ cout << "league standings:" << endl;
+ for (int i=0; i<size; i++) {
+  cout << names[i] << ": " << wins[i] << endl;
+ }
+}
+
+int main()
+{
+ int numTeams;
+ 
+ cout << "how many teams will you enter?: ";
+ cin >> numTeams;
+ 
+ string *names = new string[numTeams];
+ int *wins = new int[numTeams];
+ 
+ initializeArrays(names, wins, numTeams);
+ sortData(names, wins, numTeams);
+ displayData(names, wins, numTeams);
+ 
+ delete [] names;
+ names = NULL;
+ delete [] wins;
+ wins = NULL;
+}
