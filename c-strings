@@ -1,0 +1,154 @@
+// Assignment 8: Pearl Anyanwu
+// This program allows the practice of c-strings (character arrays) by
+// passing them into functions and returning the output that's been asked for.
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+// FUNCTION 1
+int lastIndexOf(char *s, char c)
+{
+ for (int i = strlen(s)-1; i >= 0; i--) { // loop through string starting from the end.
+  if (s[i] == c) { // compare each index with the chosen character.
+   return i; // return the index.
+  }
+ }
+ return -1;
+}
+
+// FUNCTION 2
+void reverse(char *s)
+{
+ char *p1 = s; // start of string.
+ char *p2 = s + strlen(s)-1; // end of string.
+ char temp;
+ for (int i = 0; i < (strlen(s)-i-1); i++) {
+  temp = *p1;
+  *p1 = *p2;
+  *p2 = temp;
+  *p1++; // shift forward. (start -->)
+  *p2--; // shift backward. (<-- end)
+ }
+}
+
+// FUNCTION 3
+int replace(char *s, char target, char replacementChar)
+{
+int count = 0;
+ for (int i = 0; i < strlen(s); i++) { // loop through string.
+  if (s[i] == target) { // compare each index to chosen target.
+   s[i] = replacementChar;
+   count++; // count how many replacements were made.
+  }
+ }
+ cout << "New string with replacementChar: " << s << endl;
+ cout << "A character replacement was made " << count << " time(s)." << endl;
+}
+
+// FUNCTION 4
+int findSubstring(char *s, char substring[])
+{
+ int index;
+ bool match = true;
+ for (int i = 0; i < strlen(s); i++) { // loop through string.
+  if (substring[0] == s[i]) { // if value of first position 0 of substring is in string, then true.
+    match = true;
+    for (int j = 0; j < strlen(substring); j++) { // loop through substring.
+     if (substring[j] != s[i+j]) { // comparing values after the first 'for' returns true.
+      match = false;
+     }
+    }
+    if (match) { // if match == true.
+     index = i; // the index of the first char of substring.
+     cout << "First index of " << substring << " is " << index << "." << endl;
+    }
+  }    
+ }
+}
+
+// FUNCTION 5
+bool isPalindrome(char *s)
+{
+ for (int i = 0; i < strlen(s)/2; i++) { // loop through string.
+  if (s[i] != s[strlen(s)-i-1]) { // compare indices. [start --> <-- end]
+   return false;
+  }
+ }
+ return true;
+}
+
+// MAIN FUNCTION
+int main ()
+{
+ const int maxChars = 128;
+// FUNCTION 1
+ char s[maxChars];
+ cout << "Entering function 1 - lastIndexOf()." << endl;
+ char c;
+ int index; // index = index of the chosen character in the string, if present.
+ cout << "Enter a string: ";
+ cin >> s;
+ cout << "Enter a character to find in the above string: ";
+ cin >> c;
+ index = lastIndexOf(s, c);
+ if (index != -1) {
+  cout << "Last index of '" << c << "' in this string: " << index << endl;
+ }
+ else {
+  cout << c << " was not found in this string." << endl;
+ }
+ cout << "Exiting function 1." << endl;
+ cout << endl;
+ 
+// FUNCTION 2
+ char t[maxChars];
+ cout << "Entering function 2 - reverse()." << endl;
+ cout << "Enter a string: ";
+ cin >> t;
+ cout << "Original string: " << t << endl;
+ reverse(t);
+ cout << "Reversed string: " << t << endl;
+ cout << "Exiting function 2." << endl;
+ cout << endl;
+ 
+// FUNCTION 3
+ char u[maxChars];
+ char target;
+ char replacementChar;
+ cout << "Entering function 3 - replace()." << endl;
+ cout << "Enter a string: ";
+ cin >> u;
+ cout << "Enter a target character: ";
+ cin >> target;
+ cout << "Enter a replacement character: ";
+ cin >> replacementChar;
+ replace(u, target, replacementChar);
+ cout << "Exiting function 3." << endl;
+ cout << endl;
+ 
+// FUNCTION 4
+ char v[maxChars];
+ char subV[maxChars];
+ cout << "Entering function 4 - findSubstring()." << endl;
+ cout << "Enter a string: ";
+ cin >> v;
+ cout << "Enter a substring for this string: ";
+ cin >> subV;
+ findSubstring(v, subV);
+ cout << "Exiting function 4." << endl;
+ cout << endl;
+
+// FUNCTION 5
+ char w[maxChars];
+ cout << "Entering function 5 - isPalindrome()." << endl;
+ cout << "Enter a string: ";
+ cin >> w;
+ if (isPalindrome(w)) {
+  cout << w << " is a palindrome." << endl;
+ }
+ else {
+  cout << w << " is not a palindrome." << endl;
+ }
+ cout << "Exiting function 5." << endl;
+}
