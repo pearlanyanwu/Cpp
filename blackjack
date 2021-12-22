@@ -7,7 +7,10 @@ int main()
 {
     srand(static_cast<unsigned int>(time(NULL))); char decision;
     do {
-        int const card1 = rand()%(10)+1; int const card2 = rand()%(10)+1; int sum = card1 + card2; int total = sum; int const bust = 21;
+        int const card1 = rand()%(10)+1; int const card2 = rand()%(10)+1;
+        int sum = card1 + card2
+        int total = sum
+        int const bust = 21;
 
         cout << "welcome to blackjack!" << endl;
         cout << "your starting cards: " << card1 << " & " << card2 << endl; // shows first 2 cards.
