@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+char* ay(char *str)
+{
+  char *ptr = NULL;
+  ptr = new char [(strlen(str) * 2) + 1]; 
+  strcpy(ptr, str);
+  strcat(ptr,"ay");
+  return ptr; 
+}
+
+
+int main() 
+{
+  char *name = NULL; 
+  char team[] = "giants";
+
+  name = ay(team);
+  cout << name;
+
+  delete [] name;
+  name = NULL;
+}
