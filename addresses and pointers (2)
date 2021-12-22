@@ -3,23 +3,23 @@ using namespace std;
 
 int main()
 {
+    
+// Question 1: What would cout << *iPtr print out?
 
-// Question 1
- int i[4] = {3, 10, 6, 1};   // initialize array i
- int *iPtr = i;              // initialize pointer of array i to its first element -- 3
- cout << *iPtr << endl;      // display '3' to the console
+ int i[4] = {3, 10, 6, 1};
+ int *iPtr = i;
+ cout << *iPtr << endl;
  
-// Question 2
+// Answer: The value of the first element of array i, 3.
+--------------------------------------------------------------------------------------------------------
+// Question 2: True/False: *(iPtr+1) is equivalent to iPtr[1]
+
  if (*(iPtr+1) == iPtr[1]) {
-    cout << "True." << endl;
+    cout << "True" << endl;
  }
  else {
-  cout << "False." << endl;
+  cout << "False" << endl;
  }
 }
 
-// Question 1: What would cout << *iPtr print out?
-// Answer: The value of the first element of array i (3).
-
-// Question 2: True/False: *(iPtr+1) is equivalent to iPtr[1]
-// True.
+// Answer: True.
