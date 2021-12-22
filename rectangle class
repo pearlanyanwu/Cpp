@@ -1,0 +1,76 @@
+#include <iostream>
+#include "Rectangle.h"
+using namespace std;
+
+void Rectangle::setWidth(double w)
+{
+ if (w > 0) {
+  width = w;     
+ }
+ else {
+  cout << "Invalid input for width, w." << endl;
+  exit(1);
+ }
+}
+
+void Rectangle::setLength(double l)
+{
+ if (l > 0) {
+  length = l;     
+ }
+ else {
+  cout << "Invalid input for length, l." << endl;
+  exit(1);
+ }
+}
+
+double Rectangle::getWidth() const
+{
+ return width;
+}
+
+double Rectangle::getLength() const
+{
+ return length;
+}
+
+double Rectangle::getArea() const
+{
+ return (width*length);
+}
+
+double Rectangle::getPerimeter() const
+{
+ return ((2*width)+(2*length));
+}
+
+bool Rectangle::isSquare()
+{
+ if (width == length) {
+  return true;
+ }
+ else {
+  return false;
+ }
+}
+
+int main()
+{
+ Rectangle r; // 'r' is the instance of class Rectangle.
+ 
+ r.setWidth(6);
+ r.setLength(6);
+ 
+ cout << "Width: " << r.getWidth() << endl;
+ cout << "Length: " << r.getLength() << endl;
+ cout << "Area: " << r.getArea() << endl;
+ cout << "Perimeter: " << r.getPerimeter() << endl;
+ 
+ if (r.isSquare()) {
+  cout << "This is a square." << endl;
+ }
+ else {
+  cout << "This is not a square." << endl;
+ }
+ return 0;
+}
