@@ -1,7 +1,3 @@
-// Assignment 8: Pearl Anyanwu
-// This program allows the practice of c-strings (character arrays) by
-// passing them into functions and returning the output that's been asked for.
-
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -16,7 +12,7 @@ int lastIndexOf(char *s, char c)
  }
  return -1;
 }
-
+--------------------------------------------------------------------------------------------------------
 // FUNCTION 2
 void reverse(char *s)
 {
@@ -31,7 +27,7 @@ void reverse(char *s)
   *p2--; // shift backward. (<-- end)
  }
 }
-
+--------------------------------------------------------------------------------------------------------
 // FUNCTION 3
 int replace(char *s, char target, char replacementChar)
 {
@@ -45,7 +41,7 @@ int count = 0;
  cout << "New string with replacementChar: " << s << endl;
  cout << "A character replacement was made " << count << " time(s)." << endl;
 }
-
+--------------------------------------------------------------------------------------------------------
 // FUNCTION 4
 int findSubstring(char *s, char substring[])
 {
@@ -66,7 +62,7 @@ int findSubstring(char *s, char substring[])
   }    
  }
 }
-
+--------------------------------------------------------------------------------------------------------
 // FUNCTION 5
 bool isPalindrome(char *s)
 {
@@ -77,11 +73,12 @@ bool isPalindrome(char *s)
  }
  return true;
 }
-
+--------------------------------------------------------------------------------------------------------
 // MAIN FUNCTION
 int main ()
 {
  const int maxChars = 128;
+ 
 // FUNCTION 1
  char s[maxChars];
  cout << "Entering function 1 - lastIndexOf()." << endl;
