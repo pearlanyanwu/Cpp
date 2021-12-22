@@ -7,7 +7,7 @@ int main()
 // Question 1
  int i[4] = {3, 10, 6, 1};   // initialize array i
  int *iPtr = i;              // initialize pointer of array i to its first element -- 3
- cout << *iPtr << endl;      // display '3' to thew console
+ cout << *iPtr << endl;      // display '3' to the console
  
 // Question 2
  if (*(iPtr+1) == iPtr[1]) {
