@@ -3,11 +3,13 @@ using namespace std;
 
 int main()
 {
- int i[4] = {3, 10, 6, 1};
- int *iPtr = i;
- cout << *iPtr << endl;
+
+// Question 1
+ int i[4] = {3, 10, 6, 1};   // initialize array i
+ int *iPtr = i;              // initialize pointer of array i to its first element -- 3
+ cout << *iPtr << endl;      // display '3' to thew console
  
-// Checking validity (for Q2)
+// Question 2
  if (*(iPtr+1) == iPtr[1]) {
     cout << "True." << endl;
  }
