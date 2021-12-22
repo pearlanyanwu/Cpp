@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    int i = 3;
-    int *iPtr = NULL;
-    iPtr = &i;
-    cout << iPtr;
+    int i = 3;          // initialize variabke 'i'
+    int *iPtr = NULL;   // initialize pointer of variable 'i'
+    iPtr = &i;          // assign the address of variable 'i' to the pointer
+    cout << iPtr;       // display the address of variable 'i' to the console
 }
