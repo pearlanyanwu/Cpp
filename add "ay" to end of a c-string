@@ -11,6 +11,7 @@ char* ay(char *str)
   return ptr; 
 }
 
+
 int main() 
 {
   char *name = NULL; 
