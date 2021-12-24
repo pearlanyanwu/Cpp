@@ -27,3 +27,8 @@ int main()
 {
  cardsAverage();
 }
+
+// cards.txt
+128904
+212323
+250202
