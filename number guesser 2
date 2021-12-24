@@ -1,0 +1,40 @@
+#include <iostream>
+#include "NumberGuesser.h"
+using namespace std;
+
+int main() 
+{
+  cout << "Think of a number between 1 to 100: " << endl;
+  NumberGuesser game(1,100); 
+  char userInput;
+
+  do {
+    cout << "Is your number " << game.getCurrentGuess() << "?: (h/l/c) " << endl;
+    cin >> userInput;
+      if (userInput == 'h')
+      {
+        game.higher();
+      }
+      if (userInput == 'l')
+      {
+        game.lower();
+      }
+      if (userInput == 'c')
+      {
+        cout << "Got your number!" << endl;
+        cout << "Would you like to play again (y/n): " << endl;
+        cin >> userInput;
+      }
+
+      if (userInput == 'y')
+      {
+        cout << "Think of a number between 1 to 100: " << endl;
+        game.reset(1,100);
+      }
+      if (userInput == 'n')
+      {
+        cout << "Game ended. " << endl;
+        break;
+      }
+  } while (1);
+}
