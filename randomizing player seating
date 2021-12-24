@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+ int numPlayers;
+ string names;
+ srand(time(NULL));
+ 
+// ask the user how many people are playing.
+ cout << "how many players? ";
+ cin >> numPlayers;
+ 
+ vector <string> players(numPlayers, names);
+ 
+// ask the user to enter each name.
+ for (int i = 0; i < numPlayers; i++) {
+    cout << "enter the name for player #" << i+1 << ": ";
+    cin >> players[i];
+ }
+ 
+// print out a sorted list of names.
+ cout << endl;
+ cout << "sorting the names:" << endl;
+ sort(players.begin(), players.end());
+  for (int j = 0; j < players.size(); j++) {
+   cout << players[j] << endl;
+  }
+  
+// print out a randomized list of names to determine who sits where.
+ cout << endl;
+ cout << "randomizing the order of the names:" << endl;
+ random_shuffle(players.begin(), players.end());
+  for (int k = 0; k < players.size(); k++) {
+   cout << players[k] << endl;
+  }
+}
