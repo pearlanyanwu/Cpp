@@ -13,26 +13,26 @@ int main()
         int const bust = 21;
 
         cout << "welcome to blackjack!" << endl;
-        cout << "your starting cards: " << card1 << " & " << card2 << endl; // shows first 2 cards.
-        cout << "sum: " << sum << endl; // sums the first 2 cards.
+        cout << "your starting cards: " << card1 << " & " << card2 << endl;
+        cout << "sum: " << sum << endl;
         while (total < bust) {
             cout << "another card? (select any letter for yes or 'n' for no): ";
             cin >> decision;
             if (decision != 'n') {
-                int anotherCard = rand()%(10)+1; // generates one new card value.
-                total = total + anotherCard; // sums up previous sum and new card value.
+                int anotherCard = rand()%(10)+1;
+                total = total + anotherCard;
                 cout << "new card: " << anotherCard << endl;
                 cout << "new total: " << total << endl;
             }
             else if (decision == 'n') {
                 cout << "game over. end total is " << total << "." << endl;
-                break; // gets user out of the while-loop.
+                break;
             }
         }
         if (total >= bust) {
-            cout << "bust!" << endl; // game ends when user reaches 21 or above.
+            cout << "bust!" << endl;
         }
         cout << "play again? (select any letter for yes or 'n' for no): ";
         cin >> decision;
-    } while (decision != 'n'); // will play again as long as input is NOT 'n'.
+    } while (decision != 'n');
 }
