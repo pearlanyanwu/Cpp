@@ -15,7 +15,7 @@ char* ay(char *str)
 int main() 
 {
   char *name = NULL; 
-  char team[] = "giants";     // OR ANY STRING OF YOUR CHOICE
+  char team[] = "giants"; // OR ANY STRING OF YOUR CHOICE
 
   name = ay(team);
   cout << name;
