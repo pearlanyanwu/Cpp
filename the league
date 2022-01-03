@@ -14,7 +14,7 @@ void initializeArrays(string names[], int wins[], int size)
  }
 }
 
-void swapper(int& x, int& y)     // swap team scores
+void swapper(int& x, int& y) // swap team scores
 {
  int temp;
  temp = x;
@@ -22,7 +22,7 @@ void swapper(int& x, int& y)     // swap team scores
  y = temp;
 }
 
-void swapper(string& x, string& y)     // swap team names
+void swapper(string& x, string& y) // swap team names
 {
  string temp;
  temp = x;
