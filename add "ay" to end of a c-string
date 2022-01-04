@@ -11,8 +11,7 @@ char* ay(char *str)
   return ptr; 
 }
 
-
-int main() 
+int main()
 {
   char *name = NULL; 
   char team[] = "giants"; // OR ANY STRING OF YOUR CHOICE
